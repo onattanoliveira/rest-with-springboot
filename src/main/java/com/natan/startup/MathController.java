@@ -37,6 +37,27 @@ public class MathController {
         return (convertToDouble(numberOne) / convertToDouble(numberTwo));
     }
 
+    @RequestMapping(value = "/mult/{numberOne}/{numberTwo}", method=RequestMethod.GET)
+    public Double mult(@PathVariable(value = "numberOne") String numberOne,
+                       @PathVariable(value = "numberTwo") String numberTwo) throws Exception {
+        if(!isNumeric(numberOne) || !isNumeric(numberTwo))
+            throw new UnsuportedMathOperationException("Please set a numeric value");
+
+        return convertToDouble(numberOne) * convertToDouble(numberTwo);
+    }
+
+    @RequestMapping(value = "/avg/{numberOne}/{numberTwo}", method=RequestMethod.GET)
+    public Double avg(@PathVariable(value = "numberOne") String numberOne,
+                       @PathVariable(value = "numberTwo") String numberTwo) throws Exception {
+        if(!isNumeric(numberOne) || !isNumeric(numberTwo))
+            throw new UnsuportedMathOperationException("Please set a numeric value");
+
+        Double numberSum = convertToDouble(numberOne) + convertToDouble(numberTwo);
+        Double[] sumElementsArr = {convertToDouble(numberOne), convertToDouble(numberTwo)};
+
+        return numberSum / sumElementsArr.length;
+    }
+
     private Double convertToDouble(String strNumber) {
         if (strNumber == null ) return 0D;
         String number = strNumber.replaceAll(",", ".");
