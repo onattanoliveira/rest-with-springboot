@@ -52,18 +52,15 @@ public class MathController {
         if(!isNumeric(numberOne) || !isNumeric(numberTwo))
             throw new UnsuportedMathOperationException("Please set a numeric value");
 
-        Double numberSum = convertToDouble(numberOne) + convertToDouble(numberTwo);
-        Double[] sumElementsArr = {convertToDouble(numberOne), convertToDouble(numberTwo)};
-
-        return numberSum / sumElementsArr.length;
+        return (convertToDouble(numberOne) + convertToDouble(numberTwo)) / 2;
     }
 
-    @RequestMapping(value = "/sqrt/{numberOne}", method=RequestMethod.GET)
-    public Double sqrt(@PathVariable(value = "numberOne") String numberOne) throws Exception {
-        if(!isNumeric(numberOne))
+    @RequestMapping(value = "/sqrt/{number}", method=RequestMethod.GET)
+    public Double sqrt(@PathVariable(value = "number") String number) throws Exception {
+        if(!isNumeric(number))
             throw new UnsuportedMathOperationException("Please set a numeric value");
 
-        return Math.sqrt(convertToDouble(numberOne));
+        return Math.sqrt(convertToDouble(number));
     }
 
     private Double convertToDouble(String strNumber) {
