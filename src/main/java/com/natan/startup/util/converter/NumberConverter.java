@@ -1,4 +1,4 @@
-package com.natan.startup.utils.converters;
+package com.natan.startup.util.converter;
 
 public class NumberConverter {
 
