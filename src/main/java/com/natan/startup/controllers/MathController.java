@@ -1,10 +1,9 @@
 package com.natan.startup.controllers;
-
 import com.natan.startup.utils.converters.NumberConverter;
 import com.natan.startup.exceptions.UnsuportedMathOperationException;
 import com.natan.startup.utils.math.MathOps;
-import org.springframework.web.bind.annotation.*;
 
+import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 
