@@ -1,4 +1,4 @@
-package com.natan.startup.utils.math;
+package com.natan.startup.util.math;
 
 import java.util.Arrays;
 import java.util.Collections;

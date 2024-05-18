@@ -1,4 +1,4 @@
-package com.natan.startup.exceptions;
+package com.natan.startup.exception;
 
 import java.io.Serial;
 import java.io.Serializable;

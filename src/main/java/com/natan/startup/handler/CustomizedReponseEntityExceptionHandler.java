@@ -1,9 +1,8 @@
 package com.natan.startup.handler;
 
-import com.natan.startup.exceptions.ExceptionResponse;
-import com.natan.startup.exceptions.UnsuportedMathOperationException;
+import com.natan.startup.exception.ExceptionResponse;
+import com.natan.startup.exception.UnsuportedMathOperationException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

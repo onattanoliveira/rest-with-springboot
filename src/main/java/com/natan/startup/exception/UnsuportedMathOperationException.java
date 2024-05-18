@@ -1,4 +1,4 @@
-package com.natan.startup.exceptions;
+package com.natan.startup.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
