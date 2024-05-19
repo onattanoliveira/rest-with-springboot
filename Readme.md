@@ -29,6 +29,6 @@ mvn spring-boot:run
 ```
 
 ## 🔗 Links
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/natan-oliveira-71023822b)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/natan-oliveira-71023822b)
 [![github](https://img.shields.io/badge/github-050505?style=for-the-badge&logo=github&logoColor=white)](https://github.com/onattanoliveira/rest-with-springboot)
 
