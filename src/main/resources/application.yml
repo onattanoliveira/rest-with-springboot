@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/udemy-rest-java-mysql?useTimezone=true?serverTimezone=UTC?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: 2823656
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      show-sql: false
