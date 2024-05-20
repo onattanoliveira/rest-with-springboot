@@ -1,9 +1,14 @@
 package com.natan.startup.exception;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
+@Setter
+@Getter
 public class ExceptionResponse implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -18,27 +23,4 @@ public class ExceptionResponse implements Serializable {
         this.message = message;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getDetails() {
-        return details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
-    }
 }

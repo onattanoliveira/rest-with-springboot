@@ -1,6 +1,6 @@
 package com.natan.startup.controller;
 import com.natan.startup.util.converter.NumberConverter;
-import com.natan.startup.exception.UnsuportedMathOperationException;
+import com.natan.startup.exception.ResourceNotFoundException;
 import com.natan.startup.util.math.MathOps;
 
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class MathController {
     public Double sum(@PathVariable(value="numberOne") String numberOne,
                       @PathVariable(value="numberTwo") String numberTwo) throws Exception {
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo))
-            throw new UnsuportedMathOperationException("Please set a numeric value");
+            throw new ResourceNotFoundException("Please set a numeric value");
         Double[] arrNumbers = {
                 NumberConverter.convertToDouble(numberOne),
                 NumberConverter.convertToDouble(numberTwo)
@@ -27,7 +27,7 @@ public class MathController {
     public Double sub(@PathVariable(value = "numberOne") String numberOne,
                       @PathVariable(value = "numberTwo") String numberTwo) throws Exception {
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo))
-            throw new UnsuportedMathOperationException("Please set a numeric value");
+            throw new ResourceNotFoundException("Please set a numeric value");
         Double[] arrNumbers = {
                 NumberConverter.convertToDouble(numberOne),
                 NumberConverter.convertToDouble(numberTwo)
@@ -39,7 +39,7 @@ public class MathController {
     public Double div(@PathVariable(value = "numberOne") String numberOne,
                       @PathVariable(value = "numberTwo") String numberTwo) throws Exception {
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo))
-            throw new UnsuportedMathOperationException("Please set a numeric value");
+            throw new ResourceNotFoundException("Please set a numeric value");
         Double[] arrNumbers = {
                 NumberConverter.convertToDouble(numberOne),
                 NumberConverter.convertToDouble(numberTwo)
@@ -51,7 +51,7 @@ public class MathController {
     public Double mult(@PathVariable(value = "numberOne") String numberOne,
                        @PathVariable(value = "numberTwo") String numberTwo) throws Exception {
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo))
-            throw new UnsuportedMathOperationException("Please set a numeric value");
+            throw new ResourceNotFoundException("Please set a numeric value");
         Double[] arrNumbers = {
                 NumberConverter.convertToDouble(numberOne),
                 NumberConverter.convertToDouble(numberTwo)
@@ -63,7 +63,7 @@ public class MathController {
     public Double avg(@PathVariable(value = "numberOne") String numberOne,
                        @PathVariable(value = "numberTwo") String numberTwo) throws Exception {
         if(!NumberConverter.isNumeric(numberOne) || !NumberConverter.isNumeric(numberTwo))
-            throw new UnsuportedMathOperationException("Please set a numeric value");
+            throw new ResourceNotFoundException("Please set a numeric value");
         Double[] arrNumbers = {
                 NumberConverter.convertToDouble(numberOne),
                 NumberConverter.convertToDouble(numberTwo)
@@ -74,7 +74,7 @@ public class MathController {
     @RequestMapping(value = "/sqrt/{number}", method=RequestMethod.GET)
     public Double sqrt(@PathVariable(value = "number") String number) throws Exception {
         if(!NumberConverter.isNumeric(number))
-            throw new UnsuportedMathOperationException("Please set a numeric value");
+            throw new ResourceNotFoundException("Please set a numeric value");
 
         return Math.sqrt(NumberConverter.convertToDouble(number));
     }
