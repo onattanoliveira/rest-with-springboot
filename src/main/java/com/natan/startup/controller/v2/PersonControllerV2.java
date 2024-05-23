@@ -43,4 +43,5 @@ public class PersonControllerV2 {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
 }
