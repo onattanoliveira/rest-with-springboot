@@ -1,4 +1,4 @@
-package com.natan.startup.service;
+package com.natan.startup.service.v1;
 
 import com.natan.startup.data.vo.v1.PersonVO;
 import com.natan.startup.data.vo.v2.PersonVOV2;

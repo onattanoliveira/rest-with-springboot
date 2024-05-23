@@ -2,7 +2,6 @@ package com.natan.startup.mapper.custom;
 
 import com.natan.startup.data.vo.v2.PersonVOV2;
 import com.natan.startup.model.Person;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -31,6 +30,5 @@ public class PersonMapper {
 //        entity.setBirthDay(new Date());
         return entity;
     }
-
 
 }

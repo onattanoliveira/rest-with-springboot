@@ -1,4 +1,4 @@
-package com.natan.startup.controller;
+package com.natan.startup.controller.v1;
 import com.natan.startup.util.converter.NumberConverter;
 import com.natan.startup.exception.ResourceNotFoundException;
 import com.natan.startup.util.math.MathOps;
