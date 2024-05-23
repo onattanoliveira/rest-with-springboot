@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/udemy-rest-java-mysql?useTimezone=true?serverTimezone=UTC?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/udemy-rest-java-mysql?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true?serverTimezone=UTC
     username: root
     password: 2823656
   jpa:

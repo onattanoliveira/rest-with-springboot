@@ -1,8 +1,10 @@
 package com.natan.startup.service;
 
 import com.natan.startup.data.vo.v1.PersonVO;
+import com.natan.startup.data.vo.v2.PersonVOV2;
 import com.natan.startup.exception.ResourceNotFoundException;
 import com.natan.startup.mapper.DozerMapper;
+import com.natan.startup.mapper.custom.PersonMapper;
 import com.natan.startup.model.Person;
 import com.natan.startup.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class PersonService {
 
     @Autowired
     PersonRepository repository;
+
+    @Autowired
+    PersonMapper mapper;
 
     public List<PersonVO> findAll() {
 
@@ -39,14 +44,25 @@ public class PersonService {
     public PersonVO create(PersonVO person) {
 
         logger.info("Creating one person!");
+
         var entity = DozerMapper.parseObject(person, Person.class);
         var vo =  DozerMapper.parseObject(repository.save(entity), PersonVO.class);
+        return vo;
+    }
+
+    public PersonVOV2 createV2(PersonVOV2 person) {
+
+        logger.info("Creating person V2");
+
+        var entity = mapper.convertVOToEntity(person);
+        var vo = mapper.convertEntityToVO(repository.save(entity));
         return vo;
     }
 
     public PersonVO update(PersonVO person) {
 
         logger.info("Updating person...");
+        
         var entity = repository.findById(person.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
 
